@@ -1,0 +1,15 @@
+digraph G{  
+    edge[  
+        arrowhead="empty"  
+    ]  
+    node[  
+        shape="record"  
+    ]  
+    IAPEDecompress [
+        label="{IAPEDecompress |
+                virtual int GetData(char * pBuffer, int64 nBlocks, int64 * pBlocksRetrieved) = 0 \n 
+                virtual int Seek(int64 nBlockOffset) = 0 \n 
+                virtual int64 GetInfo(APE_DECOMPRESS_FIELDS Field, int64 nParam1 = 0, int64 nParam2 = 0) = 0
+        }"
+    ]
+}  

@@ -1,0 +1,26 @@
+digraph G{  
+    edge[  
+        arrowhead="empty"  
+    ]  
+    node[  
+        shape="record"  
+    ]  
+    IAPEProgressCallback [  
+        label="{IAPEProgressCallback|virtual ~IAPEProgressCallback() \n
+        virtual void Progress(int nPercentageDone) = 0 \n
+        virtual int GetKillFlag() = 0 \n
+        virtual void SetFileType(const APE::str_ansi * pType) = 0}"  
+    ]  
+    CAPEProgressCallbackLegacy [
+        label="{CAPEProgressCallbackLegacy|
+        int * m_pProgress \n 
+        APE_PROGRESS_CALLBACK m_ProgressCallback \n 
+        int * m_pKillFlag \n 
+        str_ansi m_cType[8] | 
+        virtual void Progress(int nPercentageDone) \n 
+        virtual int GetKillFlag() \n 
+        virtual void SetFileType(const APE::str_ansi * pType) \n
+        str_ansi * GetFileType()}"
+    ]
+    IAPEProgressCallback -> CAPEProgressCallbackLegacy
+}  

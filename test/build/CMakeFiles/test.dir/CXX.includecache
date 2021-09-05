@@ -1,0 +1,70 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../Shared/All.h
+stdint.h
+-
+stdlib.h
+-
+memory.h
+-
+stdio.h
+-
+math.h
+-
+WindowsEnvironment.h
+../../Shared/WindowsEnvironment.h
+windows.h
+-
+tchar.h
+-
+assert.h
+-
+unistd.h
+-
+time.h
+-
+sys/time.h
+-
+sys/types.h
+-
+sys/stat.h
+-
+wchar.h
+-
+NoWindows.h
+../../Shared/NoWindows.h
+SmartPtr.h
+../../Shared/SmartPtr.h
+Version.h
+../../Shared/Version.h
+
+../../Shared/MACLib.h
+
+../../Shared/NoWindows.h
+wctype.h
+-
+string.h
+-
+
+../../Shared/SmartPtr.h
+
+../../Shared/Version.h
+
+../../Shared/WindowsEnvironment.h
+
+/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/test/sample1.cpp
+stdio.h
+-
+time.h
+-
+All.h
+/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/test/All.h
+MACLib.h
+/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/test/MACLib.h
+

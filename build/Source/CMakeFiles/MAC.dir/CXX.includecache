@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APECompress.h
+MACLib.h
+/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/MACLib.h
+
+/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APEHeader.h
+
+/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APEInfo.cpp
+All.h
+/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/All.h
+APEInfo.h
+/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APEInfo.h
+APECompress.h
+/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APECompress.h
+APEHeader.h
+/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APEHeader.h
+GlobalFunctions.h
+/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/GlobalFunctions.h
+
+/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APEInfo.h
+IO.h
+/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/IO.h
+APETag.h
+/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APETag.h
+MACLib.h
+/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/MACLib.h
+
+/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APETag.h
+
+/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/MACLib.h
+

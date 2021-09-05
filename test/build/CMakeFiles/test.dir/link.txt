@@ -1,0 +1,1 @@
+/usr/bin/clang++  -D PLATFORM_LINUX -g   CMakeFiles/test.dir/sample1.cpp.o  -o test   -L"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/test/../build/Source"  -Wl,-rpath,"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/test/../build/Source" -lMAC_STATIC 

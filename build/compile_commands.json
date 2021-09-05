@@ -1,0 +1,367 @@
+[
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build",
+  "command": "/usr/bin/g++   -I\"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared\" -I\"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib\"   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/test.dir/sample1.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/sample1.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/sample1.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/Shared/CharacterHelper.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/CharacterHelper.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/CharacterHelper.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/Shared/CircleBuffer.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/CircleBuffer.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/CircleBuffer.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/Shared/CRC.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/CRC.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/CRC.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/Shared/GlobalFunctions.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/GlobalFunctions.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/GlobalFunctions.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/Shared/StdLibFileIO.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/StdLibFileIO.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/StdLibFileIO.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/Shared/WinFileIO.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/WinFileIO.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/WinFileIO.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/Console/Console.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Console/Console.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Console/Console.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/APECompress.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APECompress.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APECompress.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/APECompressCore.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APECompressCore.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APECompressCore.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/APECompressCreate.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APECompressCreate.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APECompressCreate.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/APEDecompress.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APEDecompress.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APEDecompress.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/APEHeader.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APEHeader.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APEHeader.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/APEInfo.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APEInfo.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APEInfo.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/APELink.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APELink.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APELink.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/APESimple.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APESimple.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APESimple.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/APETag.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APETag.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APETag.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/BitArray.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/BitArray.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/BitArray.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/MACLib.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/MACLib.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/MACLib.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/MACProgressHelper.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/MACProgressHelper.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/MACProgressHelper.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/MD5.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/MD5.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/MD5.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/NNFilter.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/NNFilter.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/NNFilter.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/NewPredictor.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/NewPredictor.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/NewPredictor.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/Prepare.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Prepare.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Prepare.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/UnBitArray.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/UnBitArray.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/UnBitArray.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/UnBitArrayBase.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/UnBitArrayBase.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/UnBitArrayBase.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/WAVInputSource.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/WAVInputSource.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/WAVInputSource.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/Old/APEDecompressCore.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/APEDecompressCore.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/APEDecompressCore.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/Old/APEDecompressOld.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/APEDecompressOld.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/APEDecompressOld.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/Old/Anti-Predictor.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/Anti-Predictor.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/Anti-Predictor.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/Old/AntiPredictorExtraHigh.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/AntiPredictorExtraHigh.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/AntiPredictorExtraHigh.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/Old/AntiPredictorFast.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/AntiPredictorFast.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/AntiPredictorFast.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/Old/AntiPredictorHigh.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/AntiPredictorHigh.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/AntiPredictorHigh.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/Old/AntiPredictorNormal.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/AntiPredictorNormal.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/AntiPredictorNormal.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/Old/UnBitArrayOld.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/UnBitArrayOld.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/UnBitArrayOld.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACLib/Old/UnMAC.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/UnMAC.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/UnMAC.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++     -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g   -o CMakeFiles/MAC_STATIC.dir/MACDll/MACDll.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACDll/MACDll.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACDll/MACDll.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/Shared/CharacterHelper.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/CharacterHelper.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/CharacterHelper.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/Shared/CircleBuffer.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/CircleBuffer.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/CircleBuffer.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/Shared/CRC.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/CRC.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/CRC.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/Shared/GlobalFunctions.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/GlobalFunctions.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/GlobalFunctions.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/Shared/StdLibFileIO.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/StdLibFileIO.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/StdLibFileIO.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/Shared/WinFileIO.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/WinFileIO.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/WinFileIO.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/Console/Console.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Console/Console.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Console/Console.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/APECompress.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APECompress.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APECompress.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/APECompressCore.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APECompressCore.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APECompressCore.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/APECompressCreate.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APECompressCreate.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APECompressCreate.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/APEDecompress.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APEDecompress.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APEDecompress.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/APEHeader.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APEHeader.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APEHeader.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/APEInfo.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APEInfo.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APEInfo.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/APELink.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APELink.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APELink.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/APESimple.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APESimple.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APESimple.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/APETag.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APETag.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/APETag.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/BitArray.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/BitArray.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/BitArray.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/MACLib.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/MACLib.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/MACLib.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/MACProgressHelper.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/MACProgressHelper.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/MACProgressHelper.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/MD5.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/MD5.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/MD5.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/NNFilter.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/NNFilter.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/NNFilter.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/NewPredictor.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/NewPredictor.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/NewPredictor.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/Prepare.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Prepare.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Prepare.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/UnBitArray.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/UnBitArray.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/UnBitArray.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/UnBitArrayBase.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/UnBitArrayBase.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/UnBitArrayBase.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/WAVInputSource.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/WAVInputSource.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/WAVInputSource.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/Old/APEDecompressCore.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/APEDecompressCore.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/APEDecompressCore.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/Old/APEDecompressOld.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/APEDecompressOld.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/APEDecompressOld.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/Old/Anti-Predictor.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/Anti-Predictor.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/Anti-Predictor.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/Old/AntiPredictorExtraHigh.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/AntiPredictorExtraHigh.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/AntiPredictorExtraHigh.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/Old/AntiPredictorFast.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/AntiPredictorFast.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/AntiPredictorFast.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/Old/AntiPredictorHigh.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/AntiPredictorHigh.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/AntiPredictorHigh.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/Old/AntiPredictorNormal.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/AntiPredictorNormal.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/AntiPredictorNormal.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/Old/UnBitArrayOld.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/UnBitArrayOld.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/UnBitArrayOld.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACLib/Old/UnMAC.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/UnMAC.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/Old/UnMAC.cpp"
+},
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source",
+  "command": "/usr/bin/g++  -DMAC_EXPORTS   -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/\" -D PLATFORM_LINUX -I \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/\"  -O0 -g -fPIC   -o CMakeFiles/MAC.dir/MACDll/MACDll.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACDll/MACDll.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACDll/MACDll.cpp"
+}
+]

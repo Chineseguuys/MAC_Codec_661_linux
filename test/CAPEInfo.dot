@@ -1,0 +1,166 @@
+digraph G{  
+    edge[  
+        arrowhead="empty"  
+    ]  
+    node[  
+        shape="record"  
+    ] 
+ 
+    CAPEInfo [
+        label="{
+            CAPEInfo | 
+            bool m_bHasFileInformationLoaded \n 
+            CSmartPtr<APE::CIO> m_spIO  \n
+            CSmartPtr<CAPETag> m_spAPETag   \n
+            APE_FILE_INFO m_APEFileInfo \n
+            bool mbAPL  |
+            + CAPEInfo(int * pErrorCode, const wchar_t * pFilename, CAPETag * pTag = NULL, bool bAPL = false, bool bReadOnly = false) \n
+            + CAPEInfo(int * pErrorCode, APE::CIO * pIO, CAPETag * pTag = NULL) \n
+            + virtual ~CAPEInfo() \n
+            - int GetFileInformation(bool bGetTagInformation = true) \n
+            - int CloseFile() \n
+            - int CheckHeaderInformation() \n
+
+            // query for information
+            - int64 GetInfo(APE_DECOMPRESS_FIELDS Field, int64 nParam1 = 0, int64 nParam2 = 0)\n
+        }"
+    ]
+
+    CAPETagField [
+        label="{
+            CAPETagField | 
+            CSmartPtr<str_utfn> m_spFieldNameUTF16 \n
+            CSmartPtr<char> m_spFieldValue  \n
+            int m_nFieldFlags   \n
+            int m_nFieldValueBytes  |
+            + CAPETagField(const str_utfn * pFieldName, const void * pFieldValue, int nFieldBytes = -1, int nFlags = 0) \n
+            + ~CAPETagField()\n
+
+            // gets the size of the entire field in bytes (name, value, and metadata)
+            + int GetFieldSize()\n 
+    
+            // get the name of the field
+            + const str_utfn * GetFieldName()\n
+
+            // get the value of the field
+            + const char * GetFieldValue()\n
+            
+            // get the size of the value (in bytes)
+            + int GetFieldValueSize()\n
+
+            // get any special flags
+            + int GetFieldFlags()\n
+            
+            // output the entire field to a buffer (GetFieldSize() bytes)
+            + int SaveField(char * pBuffer, int nBytes)\n
+
+            // checks to see if the field is read-only
+            + bool GetIsReadOnly() { return (m_nFieldFlags & TAG_FIELD_FLAG_READ_ONLY) ? true : false }\n
+            + bool GetIsUTF8Text() { return ((m_nFieldFlags & TAG_FIELD_FLAG_DATA_TYPE_MASK) == TAG_FIELD_FLAG_DATA_TYPE_TEXT_UTF8) ? true : false }\n
+
+            // set helpers (use with EXTREME caution)
+            + void SetFieldFlags(int nFlags) { m_nFieldFlags = nFlags }\n
+            - void Save32(char* pBuffer, int nValue)
+        }"
+    ]
+
+
+
+    CIO [
+        label="{
+            CIO |
+            int64 m_nSeekPosition   \n
+            unsigned int m_nSeekMethod  |
+            // open / close
+            virtual int Open(const wchar_t * pName, bool bOpenReadOnly = false) = 0\n
+            virtual int Close() = 0\n
+            
+            // read / write
+            virtual int Read(void * pBuffer, unsigned int nBytesToRead, unsigned int * pBytesRead) = 0\n
+            virtual int Write(const void * pBuffer, unsigned int nBytesToWrite, unsigned int * pBytesWritten) = 0\n
+            
+            // seek
+            void SetSeekPosition(int64 nPosition)
+            {
+                m_nSeekPosition = nPosition;
+            }
+            void SetSeekMethod(unsigned int nMethod)
+            {
+                m_nSeekMethod = nMethod;
+            }
+            virtual int64 PerformSeek() = 0\n
+            
+            // creation / destruction
+            virtual int Create(const wchar_t * pName) = 0\n
+            virtual int Delete() = 0\n
+
+            // other functions
+            virtual int SetEOF() = 0\n
+
+            // attributes
+            virtual int64 GetPosition() = 0\n
+            virtual int64 GetSize() = 0\n
+            virtual int GetName(wchar_t * pBuffer) = 0\n
+        }"
+    ]
+
+    APE_FILE_INFO [
+        label="{
+            APE_FILE_INFO |
+            int nVersion\n                                   // file version number * 1000 (3.93 = 3930)
+            int nCompressionLevel\n                          // the compression level
+            int nFormatFlags\n                               // format flags
+            uint32 nTotalFrames\n                            // the total number frames (frames are used internally)
+            uint32 nBlocksPerFrame\n                         // the samples in a frame (frames are used internally)
+            uint32 nFinalFrameBlocks\n                       // the number of samples in the final frame
+            int nChannels\n                                  // audio channels
+            int nSampleRate\n                                // audio samples per second
+            int nBitsPerSample\n                             // audio bits per sample
+            int nBytesPerSample\n                            // audio bytes per sample
+            int nBlockAlign\n                                // audio block align (channels * bytes per sample)
+            int64 nWAVHeaderBytes\n                          // header bytes of the original WAV
+            int64 nWAVDataBytes\n                            // data bytes of the original WAV
+            uint32 nWAVTerminatingBytes\n                    // terminating bytes of the original WAV
+            int64 nWAVTotalBytes\n                           // total bytes of the original WAV
+            uint32 nAPETotalBytes\n                          // total bytes of the APE file
+            int nTotalBlocks\n                               // the total number audio blocks
+            int nLengthMS\n                                  // the length in milliseconds
+            int nAverageBitrate\n                            // the kbps (i.e. 637 kpbs)
+            int nDecompressedBitrate\n                       // the kbps of the decompressed audio (i.e. 1440 kpbs for CD audio)
+            int nJunkHeaderBytes\n                           // used for ID3v2, etc.
+            int nSeekTableElements\n                         // the number of elements in the seek table(s)
+            int nMD5Invalid\n                                // whether the MD5 is valid
+            
+            CSmartPtr<uint32> spSeekByteTable\n              // the seek table (byte)
+            CSmartPtr<unsigned char> spSeekBitTable\n        // the seek table (bits -- legacy)
+            CSmartPtr<unsigned char> spWaveHeaderData\n      // the pre-audio header data
+            CSmartPtr<APE_DESCRIPTOR> spAPEDescriptor\n      // the descriptor (only with newer files)
+        }"
+    ]
+
+    APE_DESCRIPTOR [
+        label="{
+            APE_DESCRIPTOR |
+            char   cID[4]\n                             // should equal 'MAC '
+            uint16 nVersion\n                           // version number * 1000 (3.81 = 3810)
+            uint16 nPadding\n                           // because 4-byte alignment requires this (or else nVersion would take 4-bytes)
+
+            uint32 nDescriptorBytes\n                   // the number of descriptor bytes (allows later expansion of this header)
+            uint32 nHeaderBytes\n                       // the number of header APE_HEADER bytes
+            uint32 nSeekTableBytes\n                    // the number of bytes of the seek table
+            uint32 nHeaderDataBytes\n                   // the number of header data bytes (from original file)
+            uint32 nAPEFrameDataBytes\n                 // the number of bytes of APE frame data
+            uint32 nAPEFrameDataBytesHigh\n             // the high order number of APE frame data bytes
+            uint32 nTerminatingDataBytes\n              // the terminating data of the file (not including tag data)
+
+            uint8  cFileMD5[16]\n                       // the MD5 hash of the file (see notes for usage... it's a littly tricky)
+        }"
+    ]
+
+    CIO -> CAPETag
+    CIO -> CAPEInfo
+    CAPETagField -> CAPETag
+    CAPETag -> CAPEInfo
+    APE_FILE_INFO -> CAPEInfo
+    APE_DESCRIPTOR -> APE_FILE_INFO
+}  

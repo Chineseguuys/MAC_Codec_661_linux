@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/test/build",
+  "command": "/usr/bin/clang++   -I\"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/test/../Shared\"  -D PLATFORM_LINUX -g   -o CMakeFiles/test.dir/sample1.cpp.o -c \"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/test/sample1.cpp\"",
+  "file": "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/test/sample1.cpp"
+}
+]
