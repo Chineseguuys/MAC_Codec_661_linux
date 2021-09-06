@@ -94,6 +94,11 @@ struct ID3_TAG
 /**************************************************************************************************
 Footer (and header) flags
 **************************************************************************************************/
+/**
+ * header 的格式和 Footer 的格式完全一致，为了区分它们两个，所以在 flag 字段中，它们置 1 的比特的位置不同
+ * header (1 << 31)
+ * footer (1 << 30)
+*/
 #define APE_TAG_FLAG_CONTAINS_HEADER            ((unsigned int) 1 << 31)
 #define APE_TAG_FLAG_CONTAINS_FOOTER            (1 << 30)
 #define APE_TAG_FLAG_IS_HEADER                  (1 << 29)
@@ -133,6 +138,10 @@ public:
         memset(m_cReserved, 0, 8);
         m_nFields = nFields;
         m_nFlags = APE_TAG_FLAGS_DEFAULT;
+        /**
+         * APE TAG Header 以及 APE TAG Footer 指示了整个 TAG 的大小，nFieldBytes 指示了 TAG 的 Item 的大小
+         * APE_TAG_FOOTER_BYTES 则是 Header 和 Footer 的大小，一般为 32 个字节
+        */
         m_nSize = nFieldBytes + APE_TAG_FOOTER_BYTES;
         m_nVersion = CURRENT_APE_TAG_VERSION;
     }
