@@ -202,10 +202,18 @@ private:
     void Save32(char* pBuffer, int nValue);
 
     // data
+    // 下面的部分就是字段的名称以及字段的值。值得解析不再这里进行，所以只存储二进制的值
+    /**
+        字段的名称结束之后，有一个字节的 0x00 表示名称的结束，那么后面紧跟着就是名称对应的值
+        这个值占据的字节数我们已经知道是 m_nFieldValueBytes
+        
+        几个字段的二进制文件当中的排序为 
+        length | flags | title | value | length2 | flags2 | title2 | value2 | ....
+    */
     CSmartPtr<str_utfn> m_spFieldNameUTF16;
     CSmartPtr<char> m_spFieldValue;
-    int m_nFieldFlags;
-    int m_nFieldValueBytes;
+    int m_nFieldFlags;  // flags 占据四个字节
+    int m_nFieldValueBytes;     // 说明字段值占据了几个字节。
 };
 
 /**************************************************************************************************
