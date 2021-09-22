@@ -13,7 +13,7 @@ set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I \"${PROJECT_SOURCE_DIR}/Source/MACLi
 add_subdirectory(Source)
 
 #add_executable(mac  ./Source/Console/Console.cpp)
-add_executable(${PROJECT_NAME}  sample1.cpp)
+add_executable(${PROJECT_NAME}  decompress_demo1.cpp)
 target_include_directories(${PROJECT_NAME}
     PUBLIC 
         "${PROJECT_SOURCE_DIR}/Source/Shared/"

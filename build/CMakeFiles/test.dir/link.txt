@@ -1,1 +1,0 @@
-/usr/bin/g++   -I "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/Shared/" -D PLATFORM_LINUX -I "/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/Source/MACLib/"  -O0 -g   CMakeFiles/test.dir/sample1.cpp.o  -o test  -Wl,-rpath,"/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/build/Source" Source/libMAC.so 
