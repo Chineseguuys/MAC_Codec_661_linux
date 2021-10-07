@@ -451,7 +451,7 @@ void CAPEDecompress::StartFrame()
     m_nStoredCRC = (unsigned int) m_spUnBitArray->DecodeValue(DECODE_VALUE_METHOD_UNSIGNED_INT);
     m_bErrorDecodingCurrentFrame = false;
     m_nErrorDecodingCurrentFrameOutputSilenceBlocks = 0;
-
+   
     // get any 'special' codes if the file uses them (for silence, false stereo, etc.)
     m_nSpecialCodes = 0;
     if (GET_USES_SPECIAL_FRAMES(m_spAPEInfo))
