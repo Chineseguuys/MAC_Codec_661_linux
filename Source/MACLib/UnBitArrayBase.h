@@ -52,6 +52,7 @@ protected:
     
     intn m_nVersion;
     CIO * m_pIO;
+    // 整个文件当中还没有读的 Bytes 
     int64 m_nFurthestReadByte;
 
     uint32 m_nCurrentBitIndex;

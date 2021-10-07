@@ -11,7 +11,7 @@ set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set (CMAKE_VERBOSE_MAKEFILE ON)
 set (CMAKE_BUILD_TYPE Debug)
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I \"${PROJECT_SOURCE_DIR}/Source/Shared/\" -D PLATFORM_LINUX")
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I \"${PROJECT_SOURCE_DIR}/Source/MACLib/\"  -O0")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I \"${PROJECT_SOURCE_DIR}/Source/MACLib/\"  -O0 -g")
 
 # 要完全使用 clang 编译器，就需要链接 libc++ 以及 libc++abi。以及使用链接器 lld 如果使用 gcc就不需要这些选项
 set (CMAKE_SHARED_LINKER_FLAGS "${LINK_FLAGS}")

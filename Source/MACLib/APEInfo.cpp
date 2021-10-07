@@ -299,6 +299,7 @@ int64 CAPEInfo::GetInfo(APE_DECOMPRESS_FIELDS Field, int64 nParam1, int64 nParam
         if ((nFrame < 0) || (uint32(nFrame) >= m_APEFileInfo.nTotalFrames))
             nResult = 0;
         else
+            // 从 seek table 当中读取相应的 frame 在文件当中所在的位置。
             nResult = m_APEFileInfo.spSeekByteTable[nFrame] + m_APEFileInfo.nJunkHeaderBytes;
         break;
     }

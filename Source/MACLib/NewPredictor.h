@@ -106,7 +106,7 @@ protected:
     CNNFilter * m_pNNFilter;
     CNNFilter * m_pNNFilter1;
     CNNFilter * m_pNNFilter2;
-    bool m_bLegacyDecode;
+    bool m_bLegacyDecode;   // 传统编码
 };
 
 }

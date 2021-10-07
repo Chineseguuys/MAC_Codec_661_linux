@@ -105,6 +105,7 @@ public:
         m_pCurrent++;
     }
 
+    // 返回的是引用，所以可以被修改
     __forceinline TYPE & operator[](const int nIndex) const
     {
         return m_pCurrent[nIndex];

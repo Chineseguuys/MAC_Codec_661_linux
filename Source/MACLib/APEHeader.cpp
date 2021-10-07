@@ -89,6 +89,7 @@ int CAPEHeader::FindDescriptor(bool bSeek)
 
     nBytesRead = 1;
     int nScanBytes = 0;
+    // 不停的读，直到读到四个字节的 MAC 头。但是头部的扫描最多扫描 1MB 的大小
     while ((nGoalID != nReadID) && (nBytesRead == 1) && (nScanBytes < (1024 * 1024)))
     {
         unsigned char cTemp = 0;
@@ -97,7 +98,7 @@ int CAPEHeader::FindDescriptor(bool bSeek)
         nJunkBytes++;
         nScanBytes++;
     }
-
+    // 下面的这种情况则说明没有读到 MAC 文件头。可以认为该文件并不是一个 ape 文件
     if (nGoalID != nReadID)
         nJunkBytes = -1;
 
@@ -105,6 +106,7 @@ int CAPEHeader::FindDescriptor(bool bSeek)
     if (bSeek && (nJunkBytes != -1))
     {
         // successfully found the start of the file (seek to it and return)
+        // 顺利的找到了文件头，文件头前面的所有的数据就可以丢弃了
         m_pIO->SetSeekMethod(APE_FILE_BEGIN);
         m_pIO->SetSeekPosition(nJunkBytes);
         m_pIO->PerformSeek();
@@ -112,6 +114,7 @@ int CAPEHeader::FindDescriptor(bool bSeek)
     else
     {
         // restore the original file pointer
+        // 如果没有读到文件头，那么就将文件指针的位置恢复到初始的位置
         m_pIO->SetSeekMethod(APE_FILE_BEGIN);
         m_pIO->SetSeekPosition(nOriginalFileLocation);
         m_pIO->PerformSeek();
@@ -135,6 +138,7 @@ int CAPEHeader::Analyze(APE_FILE_INFO * pInfo)
         return ERROR_UNDEFINED;
 
     // read the first 8 bytes of the descriptor (ID and version)
+    // COMMON_HEADER 包含了四个字节的头标识，和2个字节的版本号
     APE_COMMON_HEADER CommonHeader; memset(&CommonHeader, 0, sizeof(APE_COMMON_HEADER));
     if (m_pIO->Read(&CommonHeader, sizeof(APE_COMMON_HEADER), &nBytesRead) || nBytesRead != sizeof(APE_COMMON_HEADER))
         return ERROR_IO_READ;
@@ -167,6 +171,12 @@ int CAPEHeader::Analyze(APE_FILE_INFO * pInfo)
 
 int CAPEHeader::AnalyzeCurrent(APE_FILE_INFO * pInfo)
 {
+    /** 读取的顺序
+     * APEDesctiptor
+     * APEHeader
+     * APESeekTable
+     * WaveHeader
+    */
     // variable declares
     unsigned int nBytesRead = 0;
     pInfo->spAPEDescriptor.Assign(new APE_DESCRIPTOR); memset(pInfo->spAPEDescriptor, 0, sizeof(APE_DESCRIPTOR));
@@ -174,11 +184,14 @@ int CAPEHeader::AnalyzeCurrent(APE_FILE_INFO * pInfo)
 
     // read the descriptor
     m_pIO->SetSeekMethod(APE_FILE_BEGIN);
+    // 如果文件的前面有 ID3 Header 的话，我们就需要先跳过这个 ID3 Header 
+    // 跳过的 Byte 数记录在 nJunkHeaderBytes 
     m_pIO->SetSeekPosition(pInfo->nJunkHeaderBytes);
     m_pIO->PerformSeek();
     if (m_pIO->Read(pInfo->spAPEDescriptor, sizeof(APE_DESCRIPTOR), &nBytesRead) || nBytesRead != sizeof(APE_DESCRIPTOR))
         return ERROR_IO_READ;
 
+    // 读到的数据的量比 descriptor 当中存储的数量少的话，那么主动移动文件读取指针的位置到描述的长度的位置
     if ((pInfo->spAPEDescriptor->nDescriptorBytes - nBytesRead) > 0)
     {
         m_pIO->SetSeekMethod(APE_FILE_CURRENT);
@@ -229,6 +242,7 @@ int CAPEHeader::AnalyzeCurrent(APE_FILE_INFO * pInfo)
     }
 
     // get the seek tables (really no reason to get the whole thing if there's extra)
+    // 获得 seek tables
     pInfo->spSeekByteTable.Assign(new uint32 [pInfo->nSeekTableElements], true);
     if (pInfo->spSeekByteTable == NULL) { return ERROR_UNDEFINED; }
 
@@ -260,18 +274,20 @@ int CAPEHeader::AnalyzeCurrent(APE_FILE_INFO * pInfo)
     }
     else
     {
+        // 每个 frame 的 block 大小不会超过一百万
         if (pInfo->nBlocksPerFrame > ONE_MILLION)
             return ERROR_INVALID_INPUT_FILE;
     }
 
     // check the final frame size being nonsense
+    // 最后一个 frame 的 block 的数量一定于小等于设定的每个 frame 的 block 个数。
     if (APEHeader.nFinalFrameBlocks > pInfo->nBlocksPerFrame)
         return ERROR_INVALID_INPUT_FILE;
 
     return ERROR_SUCCESS;
 }
 
-int CAPEHeader::AnalyzeOld(APE_FILE_INFO * pInfo)
+int CAPEHeader::AnalyzeOld(APE_FILE_INFO * pInfo)   // 3950 之前的版本
 {
     // variable declares
     unsigned int nBytesRead = 0;
@@ -344,6 +360,7 @@ int CAPEHeader::AnalyzeOld(APE_FILE_INFO * pInfo)
     // get the wave header
     if (!(APEHeader.nFormatFlags & MAC_FORMAT_FLAG_CREATE_WAV_HEADER))
     {
+        // WAV HEADER 的长度不会超过 1MB。如果从文件当前的读取位置开始，到文件的末尾的长度比 header指定的长度长，那么一定是出错了。
         if (APEHeader.nHeaderBytes > WAV_HEADER_SANITY) return ERROR_INVALID_INPUT_FILE;
         if (m_pIO->GetPosition() + APEHeader.nHeaderBytes > m_pIO->GetSize()) { return ERROR_UNDEFINED; }
         pInfo->spWaveHeaderData.Assign(new unsigned char [APEHeader.nHeaderBytes], true);

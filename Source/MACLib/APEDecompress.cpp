@@ -89,6 +89,17 @@ int CAPEDecompress::InitializeDecompressor()
     int64 nChannels = ape_min(ape_max(GetInfo(APE_INFO_CHANNELS), 1), 32);
     if (GetInfo(APE_INFO_FILE_VERSION) >= 3950)
     {
+        // 一般情况下，不再支持老版本的 APE 文件系统。处理起来比较的复杂，而且现在多见的几个APE文件的版本在 v3.95 v3.97 v3.98 和 v3.99 
+        /**
+         * 压缩的过程，针对 L 和 R 的双声道的音频，不会直接对其进行编码，我们一般会先获取 mid sum 和 diff 值来进行处理。
+         * X = (L + R) /2 ; Y = (L - R)
+         * 
+         * 我们依然不会对上面的 X Y 进行直接的编码，因为这些值可能非常的大，编码需要非常多的比特个数。我们希望参与编码的数字是比较小的数。所以，我们需要一个预测器（Predictor）
+         * 预测器需要完成的工作就是根据历史时刻的值，来预测当前时刻的值，我们希望预测的结果和真实的值的偏差越小越好。我们记 $X_{diff} = X - P_{X}$ 。那么 $X_{diff}$ 应当是比较小的值
+         * 对这个比较小的值进行编码，显然需要的比特的个数非常的少。
+         * 
+         * 这就是预测器的作用
+        */
         for (int64 nChannel = 0; nChannel < nChannels; nChannel++)
             m_aryPredictor[nChannel] = new CPredictorDecompress3950toCurrent((intn) GetInfo(APE_INFO_COMPRESSION_LEVEL), (intn) GetInfo(APE_INFO_FILE_VERSION), (intn) GetInfo(APE_INFO_BITS_PER_SAMPLE));
     }
@@ -139,9 +150,12 @@ int CAPEDecompress::GetData(char * pBuffer, int64 nBlocks, int64 * pBlocksRetrie
     }
 
     // calculate the blocks retrieved
+    /**
+     * 通过当前的 block 减去初始的 block ，得到本次读取数据获得的 block 的数量
+    */
     int64 nBlocksRetrieved = int64(nBlocksToRetrieve - nBlocksLeft);
 
-    // update position
+    // update position  记录当前所在的 block 的位置
     m_nCurrentBlock += nBlocksRetrieved;
     if (pBlocksRetrieved) *pBlocksRetrieved = nBlocksRetrieved;
 
@@ -150,6 +164,7 @@ int CAPEDecompress::GetData(char * pBuffer, int64 nBlocks, int64 * pBlocksRetrie
 
 int CAPEDecompress::Seek(int64 nBlockOffset)
 {
+    // 在第一次调用 Seek() 的时候，需要对解压缩器进行初始化。
     RETURN_ON_ERROR(InitializeDecompressor())
 
     // use the offset
@@ -162,7 +177,10 @@ int CAPEDecompress::Seek(int64 nBlockOffset)
         nBlockOffset = m_nStartBlock;
 
     // seek to the perfect location
+    // 每一个 block 当中包含了所有通道的信息，每个 block 所占用的 Bytes 记录在 m_nBlockAlign 当中
     int64 nBaseFrame = nBlockOffset / GetInfo(APE_INFO_BLOCKS_PER_FRAME);
+    // 定位的 block 的位置未必是 frame 的开头部分（大部分的情况下都不是） 
+    // 因此，从当前的 frame 开始，到定位位置的 block，需要进行 frame 内部的跳转
     int64 nBlocksToSkip = nBlockOffset % GetInfo(APE_INFO_BLOCKS_PER_FRAME);
     int64 nBytesToSkip = nBlocksToSkip * m_nBlockAlign;
         
@@ -223,15 +241,15 @@ int CAPEDecompress::FillFrameBuffer()
                 break;
         }
 
-        // get frame size
+        // get frame size  除了最后一个 frame 之外，其他的所有的 frame 的 block 数都是相同的，因此只需要简单的判断是否是最后 frame 就可以了
         int64 nFrameBlocks = GetInfo(APE_INFO_FRAME_BLOCKS, m_nCurrentFrame);
         if (nFrameBlocks < 0)
             break;
 
-        // analyze
+        // analyze  查看我们要获取的第一个 block 在 frame 当中的偏移位置。并且计算在当前的 frame 当中有多少个需要读取的 block 
         int64 nFrameOffsetBlocks = m_nCurrentFrameBufferBlock % GetInfo(APE_INFO_BLOCKS_PER_FRAME);
         int64 nFrameBlocksLeft = nFrameBlocks - nFrameOffsetBlocks;
-        int64 nBlocksThisPass = ape_min(nFrameBlocksLeft, nBlocksLeft);
+        int64 nBlocksThisPass = ape_min(nFrameBlocksLeft, nBlocksLeft); // 当前的 circule buffer 是否可以容纳下当前frame剩余的所有的数据？防止数据溢出
 
         // start the frame if we need to
         if (nFrameOffsetBlocks == 0)
@@ -429,7 +447,7 @@ void CAPEDecompress::StartFrame()
 {
     m_nCRC = 0xFFFFFFFF;
     
-    // get the frame header
+    // get the frame header //每一个 frame 开始的 32 bit 是 CRC 校验值
     m_nStoredCRC = (unsigned int) m_spUnBitArray->DecodeValue(DECODE_VALUE_METHOD_UNSIGNED_INT);
     m_bErrorDecodingCurrentFrame = false;
     m_nErrorDecodingCurrentFrameOutputSilenceBlocks = 0;
@@ -490,6 +508,11 @@ Seek to the proper frame (if necessary) and do any alignment of the bit array
 **************************************************************************************************/
 int CAPEDecompress::SeekToFrame(int64 nFrameIndex)
 {
+    /**
+     * seektable 存储值是 uint32 类型。每一个值代表了相应 frame 在文件当中的偏移位置。通过查表可以快速得到每一frame的位置。
+     * 这个位置信息是无法自己计算得到的。因为存储在原始文件中的数据是经过压缩的。每一frame 每一个 block 压缩之后的大小都是未知的
+     * 解压缩之后，原始的音频数据是每一个block包含左右声道，16bits采样的 4 字节数据。
+    */
     int64 nSeekRemainder = (GetInfo(APE_INFO_SEEK_BYTE, nFrameIndex) - GetInfo(APE_INFO_SEEK_BYTE, 0)) % 4;
     return m_spUnBitArray->FillAndResetBitArray(GetInfo(APE_INFO_SEEK_BYTE, nFrameIndex) - nSeekRemainder, nSeekRemainder * 8);
 }

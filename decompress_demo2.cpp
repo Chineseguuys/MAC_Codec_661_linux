@@ -54,6 +54,7 @@ int main(int argc, char* argv[]) {
     int64_t nBlocksPerFrame = pDec->GetInfo(APE::APE_INFO_BLOCKS_PER_FRAME);
     int nBytesPerSample = pDec->GetInfo(APE::APE_INFO_BYTES_PER_SAMPLE);
     int nChannels = pDec->GetInfo(APE::APE_INFO_CHANNELS);
+    int nBlockAlign = pDec->GetInfo(APE::APE_INFO_BLOCK_ALIGN); /*这一项也可以用来指示 block 的大小*/
 
     int fd_out_pcm = open("./test.pcm", O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR | S_IRGRP);
     int fd_out_wav = open("./test.wav", O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR | S_IRGRP);
@@ -65,8 +66,8 @@ int main(int argc, char* argv[]) {
 
     // 把 WAV 文件的头写入文件
     write(fd_out_wav, wavheaderBuffer.GetPtr(), pInfo->GetInfo(APE::APE_INFO_WAV_HEADER_BYTES));
-
-    pDec->Seek(0);
+    // 如果跳过了第一个 frame 的所有的 block
+    pDec->Seek(73728);
     int64_t seekPos = 0;
     int64_t one_size = 0;
     int64_t count = 1;
@@ -77,6 +78,7 @@ int main(int argc, char* argv[]) {
         }
         /**
          * 音频有两个通道，每一个采样数据使用 16bits，也就是 2Bytes 来进行编码
+         * 每一个 block 包含的数据的Bytes 数为 nBytesPerSample * nChannels
         */
         write(fd_out_pcm, buffer.GetPtr(), one_size * nBytesPerSample * nChannels);
         write(fd_out_wav, buffer.GetPtr(), one_size * nBytesPerSample * nChannels);
@@ -87,7 +89,7 @@ int main(int argc, char* argv[]) {
 
     close(fd_out_pcm);
     close(fd_out_wav);
-	delete[] sFilename;
+    delete[] sFilename;
     return 0;
 }
 

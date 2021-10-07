@@ -70,12 +70,21 @@ bool CUnBitArrayBase::EnsureBitsAvailable(uint32 nBits, bool bThrowExceptionOnFa
     bool bResult = true;
 
     // get more data if necessary
+    /**
+     * 这是一种异常的情况，有可能是因为没有将源文件的数据读入到 BitArray buffer 当中。
+     * 先尝试去读取数据。如果读取数据之后异常的情况依然的存在，那么就必须抛出异常了。
+     * 因此下面进行了两次条件的判断。
+    */
     if ((int64(m_nCurrentBitIndex) + int64(nBits)) >= (int64(m_nGoodBytes) * 8))
     {
         // fill
         FillBitArray();
 
         // if we still don't have enough good bytes, we don't have the bits available
+        /**
+         * 因为解码的过程以 nBits 为单位进行译码。如果当前的 BitArray Buffer 当中可用的 bit 数量小于 nBits 
+         * 那么就是出错了
+        */
         if ((int64(m_nCurrentBitIndex) + int64(nBits)) >= (int64(m_nGoodBytes) * 8))
         {
             // overread error
@@ -100,7 +109,7 @@ uint32 CUnBitArrayBase::DecodeValueXBits(uint32 nBits)
 
     // variable declares
     uint32 nLeftBits = 32 - (m_nCurrentBitIndex & 31);
-    uint32 nBitArrayIndex = m_nCurrentBitIndex >> 5;
+    uint32 nBitArrayIndex = m_nCurrentBitIndex >> 5;    // (BitArray 的类型是 uint32 所以数组的下标是 BitIndex / 32)
     m_nCurrentBitIndex += nBits;
     
     // if their isn't an overflow to the right value, get the value and exit
@@ -120,6 +129,7 @@ int CUnBitArrayBase::FillAndResetBitArray(int64 nFileLocation, int64 nNewBitInde
     if (nNewBitIndex < 0) return ERROR_INVALID_INPUT_FILE;
 
     // seek if necessary
+    // 直接定位到相应的 frame 的位置
     if (nFileLocation != -1)
     {
         m_pIO->SetSeekMethod(APE_FILE_BEGIN);
@@ -129,6 +139,11 @@ int CUnBitArrayBase::FillAndResetBitArray(int64 nFileLocation, int64 nNewBitInde
     }
 
     // fill
+    // 为什么初始化的位置放在末尾 因为这个函数的关键在于 Reset。Reset 意味着，buffer当中以前存储的数据全部要清除
+    // 自然 m_nCurrentBitIndex 要指向 buffer 的最末尾的位置，表示 buffer 当前没有可以读取的数据
+    /**
+     * 注意 FillAndResetBitArray() 函数和 FillBitArray() 的区别
+    */
     m_nCurrentBitIndex = m_nBits; // position at the end of the buffer
     int nResult = FillBitArray();
 
@@ -141,19 +156,30 @@ int CUnBitArrayBase::FillAndResetBitArray(int64 nFileLocation, int64 nNewBitInde
 int CUnBitArrayBase::FillBitArray() 
 {
     // get the bit array index
+    /**
+     * m_pBitArray 数组存储的数据类型是 uint32 。所以 Bit Index 是 BitArrayIndex 的 32 倍
+     * uint32 类型长度为 32 bits
+    */
     uint32 nBitArrayIndex = m_nCurrentBitIndex >> 5;
     
-    // move the remaining data to the front
+    // move the remaining data to the front 
+    // 从 m_nCurrentBitIndex 向后面的位置的数据都是目前还没有读取的数据。这些数据应当先被读取，所以需要移动到 buffer 的最前面。
     int nBytesToMove = m_nBytes - (nBitArrayIndex * 4);
     if (nBytesToMove > 0)
+        /**
+         * 注意 m_pBitArray 的数据类型是 uint32* 类型。在移动指针的时候，移动长度为 4 字节
+        */
         memmove((void *) (m_pBitArray), (const void *) (m_pBitArray + nBitArrayIndex), nBytesToMove);
 
-    // get the number of bytes to read
+    // get the number of bytes to read   
+    // 每一次读，都将整个 buffer 读满？ 尽可能的填满，但是也有可能填不满
     int64 nBytesToRead = nBitArrayIndex * 4;
     if (m_nFurthestReadByte > 0)
-    {
+    {   /**
+         nFurthestReadBytes 存储的是文件还剩余的可以读取的 Bytes 的个数。所以初始的大小应当是文件的大小
+        */
         int64 nFurthestReadBytes = m_nFurthestReadByte - m_pIO->GetPosition();
-        if (nBytesToRead > nFurthestReadBytes)
+        if (nBytesToRead > nFurthestReadBytes)  // 如果文件剩余可读取的部分小于 buffer 当中可以填充的部分，需要进行处理。否则文件 IO 会出错
         {
             nBytesToRead = nFurthestReadBytes;
             if (nBytesToRead < 0)
@@ -167,10 +193,18 @@ int CUnBitArrayBase::FillBitArray()
 
     // zero anything at the tail we didn't fill
     m_nGoodBytes = ((m_nElements - nBitArrayIndex) * 4) + nBytesRead;
+    /**
+     * 读取到的数据未必可以将 buffer 填满。 当前的 buffer 当中
+     * ((m_nElements - nBitArrayIndex) * 4) = m_nBytes - (nBitArrayIndex * 4) 表示本次读取之前，buffer当中已经存储的数据
+     * nBytesRead 是本次读取的数据量
+     * 那么 m_nGoodBytes 表示在本次读取结束之后，整个 buffer 当中剩余的有效的数据。如果当前的 buffer 没有被填满的话(m_nGoodBytes < m_nBytes)
+     * 那么末尾空闲的空间全部置0
+    */
     if (m_nGoodBytes < m_nBytes)
         memset(&((unsigned char *) m_pBitArray)[m_nGoodBytes], 0, m_nBytes - m_nGoodBytes);
 
     // adjust the m_Bit pointer
+    // 
     m_nCurrentBitIndex = m_nCurrentBitIndex & 31;
     
     // return

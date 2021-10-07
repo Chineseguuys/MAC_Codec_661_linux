@@ -251,6 +251,7 @@ int CAPETag::Analyze()
     m_nAPETagVersion = -1;
 
     // check for an ID3v1 tag
+    // 定位到文件的最后 128 Bytes 因为 ID3 tag 的大小是固定的 128 Bytes 
     m_spIO->SetSeekPosition(-ID3_TAG_BYTES);
     m_spIO->SetSeekMethod(APE_FILE_END);
     if (m_spIO->PerformSeek() == ERROR_SUCCESS)
