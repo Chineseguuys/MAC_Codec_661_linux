@@ -67,7 +67,7 @@ inline uint32 CUnBitArray::DecodeByte()
     if ((m_nCurrentBitIndex + 8) >= (m_nGoodBytes * 8))
         EnsureBitsAvailable(8, true);
 
-    // read byte
+    // read byte  从 bitArray 当中读取 8 bits （一个字节） 的数据
     uint32 nByte = ((m_pBitArray[m_nCurrentBitIndex >> 5] >> (24 - (m_nCurrentBitIndex & 31))) & 0xFF);
     m_nCurrentBitIndex += 8;
     return nByte;

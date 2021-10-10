@@ -1,3 +1,0 @@
-/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/test/build/CMakeFiles/rebuild_cache.dir
-/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/test/build/CMakeFiles/edit_cache.dir
-/home/yjh/Nutstore Files/Github_storage/mac_codec_linux/test/build/CMakeFiles/test.dir

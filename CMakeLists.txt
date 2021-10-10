@@ -17,6 +17,10 @@ set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I \"${PROJECT_SOURCE_DIR}/Source/MACLi
 set (CMAKE_SHARED_LINKER_FLAGS "${LINK_FLAGS}")
 set (CMAKE_EXE_LINKER_FLAGS "${LINK_FLAGS}")
 
+# 尝试使用 asan 
+set (CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=address")
+set (CMAKE_LINKER_FLAGS_DEBUG "${CMAKE_LINKER_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=address")
+
 add_subdirectory(Source)
 
 #add_executable(mac  ./Source/Console/Console.cpp)

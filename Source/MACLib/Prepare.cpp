@@ -966,6 +966,11 @@ void CPrepare::Unprepare(int64 * paryValues, const WAVEFORMATEX * pWaveFormatEx,
         if (pWaveFormatEx->wBitsPerSample == 16) 
         {
             // get the right and left values
+            /**
+             * L R 
+             * X = (L+R) / 2
+             * Y = (L-R)
+            */
             int nR = (int) (paryValues[0] - (paryValues[1] / 2));
             int nL = (int) (nR + paryValues[1]);
 

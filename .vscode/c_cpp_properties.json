@@ -6,8 +6,8 @@
                 "${default}"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/clang",
-            "compileCommands": "${workspaceFolder}/test/build/compile_commands.json",
+            "compilerPath": "/usr/local/bin/clang",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
             "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],

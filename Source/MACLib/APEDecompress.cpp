@@ -196,6 +196,7 @@ int CAPEDecompress::Seek(int64 nBlockOffset)
     if (spTempBuffer == NULL) return ERROR_INSUFFICIENT_MEMORY;
     
     int64 nBlocksRetrieved = 0;
+    // 如果定位的位置不在 frame 的开始部分，那么定位位置之前需要跳过的所有的数据也需要进行解压缩。
     GetData(spTempBuffer, nBlocksToSkip, &nBlocksRetrieved);
     if (nBlocksRetrieved != nBlocksToSkip)
         return ERROR_UNDEFINED;
@@ -351,11 +352,17 @@ void CAPEDecompress::DecodeBlocksToFrameBuffer(int64 nBlocks)
         }
         else if (m_wfeInput.nChannels == 2)
         {
+            /**
+             * 这里有三种情况，分别是特殊帧左声道静音    特殊帧右声道静音   特殊帧伪双声道
+            */
             if ((m_nSpecialCodes & SPECIAL_FRAME_LEFT_SILENCE) && 
                 (m_nSpecialCodes & SPECIAL_FRAME_RIGHT_SILENCE)) 
             {
                 for (nBlocksProcessed = 0; nBlocksProcessed < nBlocks; nBlocksProcessed++)
                 {
+                    /**
+                     * 这种情况说明当前的 frame 的左声道和右声道都是静音的，那么当前的帧就不需要进行解压缩了。直接输出 0 就可以了
+                    */
                     int64 aryValues[2] = { 0, 0 };
                     m_Prepare.Unprepare(aryValues, &m_wfeInput, m_cbFrameBuffer.GetDirectWritePointer());
                     m_cbFrameBuffer.UpdateAfterDirectWrite(m_nBlockAlign);
@@ -363,6 +370,16 @@ void CAPEDecompress::DecodeBlocksToFrameBuffer(int64 nBlocks)
             }
             else if (m_nSpecialCodes & SPECIAL_FRAME_PSEUDO_STEREO)
             {
+                /**
+                 * 所谓的伪双声道就是指在音频采样时是单声道音频。另外一个声道完全复制这个单声道的音频，达到输出双声道的目的。
+                 * 实际使用两个收音器录制的左右双声道由于声源的个数，位置，和声源之间距离的差异，左右声道的数据是不可能完全相同的。
+                 * 单声道音频扩展成双声道就被称做伪双声道
+                 * 
+                 * 注意：
+                 * 只有单个声道，所以，我们有 L == R ，根据差分计算公式
+                 * X = (L+R) / 2 = L = R 
+                 * Y = (L -R) = 0 
+                */
                 for (nBlocksProcessed = 0; nBlocksProcessed < nBlocks; nBlocksProcessed++)
                 {
                     int64 aryValues[2] = { m_aryPredictor[0]->DecompressValue(m_spUnBitArray->DecodeValueRange(m_aryBitArrayStates[0])), 0 };
