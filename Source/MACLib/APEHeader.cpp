@@ -241,6 +241,7 @@ int CAPEHeader::AnalyzeCurrent(APE_FILE_INFO * pInfo)
         return ERROR_INVALID_INPUT_FILE;
     }
 
+
     // get the seek tables (really no reason to get the whole thing if there's extra)
     // 获得 seek tables
     pInfo->spSeekByteTable.Assign(new uint32 [pInfo->nSeekTableElements], true);

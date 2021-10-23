@@ -298,7 +298,11 @@ int CAPEDecompress::FillFrameBuffer()
                 SeekToFrame(m_nCurrentFrame);
 
             // reset our frame buffer position to the beginning of the frame
+            // 如果重置的是第一帧的话，下面的公式计算就会计算出 负值。第一帧取值应当是 0
             m_nCurrentFrameBufferBlock = (m_nCurrentFrame - 1) * GetInfo(APE_INFO_BLOCKS_PER_FRAME);
+            // Chineseguuys bugfix 2021-10-23
+            m_nCurrentFrameBufferBlock = ape_max(m_nCurrentFrameBufferBlock, 0);
+            // Chineseguuys bugfix end
 
             if (m_bLegacyMode == false)
             {
