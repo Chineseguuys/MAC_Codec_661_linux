@@ -161,6 +161,7 @@ int CAPECompress::ProcessBuffer(bool bFinalize)
         // process as much as possible
         int64 nThreshold = (bFinalize) ? 0 : m_spAPECompressCreate->GetFullFrameBytes();
         
+        // 每次凑齐一个 frame 的数据进行编码 可能 buffer 当中会有多个 frame 的数据
         while ((m_nBufferTail - m_nBufferHead) >= nThreshold)
         {
             int64 nFrameBytes = ape_min(m_spAPECompressCreate->GetFullFrameBytes(), m_nBufferTail - m_nBufferHead);

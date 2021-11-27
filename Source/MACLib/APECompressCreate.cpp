@@ -119,6 +119,9 @@ int CAPECompressCreate::SetSeekByte(int nFrame, uint32 nByteOffset)
         return ERROR_APE_COMPRESS_TOO_MUCH_DATA;
     }
     m_spSeekTable[nFrame] = nByteOffset;
+#ifdef LOG_TEST
+    log_info("frame %ld start position is %ld", nFrame, nByteOffset);
+#endif /* LOG_TEST */
     return ERROR_SUCCESS;
 }
 
@@ -158,7 +161,7 @@ int CAPECompressCreate::InitializeFile(CIO * pIO, const WAVEFORMATEX * pwfeInput
     unsigned int nBytesWritten = 0;
     RETURN_ON_ERROR(pIO->Write(&APEDescriptor, sizeof(APEDescriptor), &nBytesWritten))
     RETURN_ON_ERROR(pIO->Write(&APEHeader, sizeof(APEHeader), &nBytesWritten))
-        
+
     // write an empty seek table
     m_spSeekTable.Assign(new uint32 [nMaxFrames], true);
     if (m_spSeekTable == NULL) { return ERROR_INSUFFICIENT_MEMORY; }
@@ -172,6 +175,11 @@ int CAPECompressCreate::InitializeFile(CIO * pIO, const WAVEFORMATEX * pwfeInput
         m_spAPECompressCore->GetBitArray()->GetMD5Helper().AddData(pHeaderData, (int) nHeaderBytes);
         RETURN_ON_ERROR(pIO->Write((void *) pHeaderData, (unsigned int) nHeaderBytes, &nBytesWritten))
     }
+
+#ifdef LOG_TEST
+    log_info("after write header to file, it take %ld bytes",
+             pIO->GetPosition());
+#endif /* LOG_TEST */
 
     return ERROR_SUCCESS;
 }

@@ -67,6 +67,9 @@ protected:
     intn m_nWindowElements;
 };
 
+/**
+ * @brief 在编译期间就可以确定数组的大小，所以更快。操作和上面的 CRollBuffer 是相同的
+ */
 template <class TYPE, int WINDOW_ELEMENTS, int HISTORY_ELEMENTS> class CRollBufferFast
 {
 public:

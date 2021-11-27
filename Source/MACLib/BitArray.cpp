@@ -200,6 +200,10 @@ Advance to a byte boundary (for frame alignment)
 ************************************************************************************/
 void CBitArray::AdvanceToByteBoundary() 
 {
+#ifdef LOG_TEST
+    log_info("%s m_nCurrentBitIndex is %ld", __FUNCTION__,
+           this->m_nCurrentBitIndex);
+#endif /* LOG_TEST */
     while (m_nCurrentBitIndex % 8)
         m_nCurrentBitIndex++;
 }

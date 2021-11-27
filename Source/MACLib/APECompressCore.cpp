@@ -32,6 +32,7 @@ CAPECompressCore::~CAPECompressCore()
     }
 }
 
+// 算法核心部分
 int CAPECompressCore::EncodeFrame(const void * pInputData, int64 nInputBytes)
 {
     // variables

@@ -11,7 +11,8 @@ aux_source_directory(MACLib/Old MACLIB_OLD_LIST)
 set (MACDLL_LIST ./MACDll/MACDll.cpp)
 set (SHARED_LIST ./Shared/CharacterHelper.cpp ./Shared/CircleBuffer.cpp ./Shared/CRC.cpp ./Shared/GlobalFunctions.cpp ./Shared/StdLibFileIO.cpp ./Shared/WinFileIO.cpp)
 
-add_library(MAC SHARED ${SHARED_LIST} ${EXE_LIST} ${MACLIB_LIST} ${MACLIB_OLD_LIST} ${MACDLL_LIST})
-add_library(MAC_STATIC STATIC ${SHARED_LIST} ${EXE_LIST} ${MACLIB_LIST} ${MACLIB_OLD_LIST} ${MACDLL_LIST})
+# log 子目录
+aux_source_directory(utils LOGS_LIST)
 
-
+add_library(MAC SHARED ${SHARED_LIST} ${EXE_LIST} ${MACLIB_LIST} ${MACLIB_OLD_LIST} ${MACDLL_LIST} ${LOGS_LIST})
+add_library(MAC_STATIC STATIC ${SHARED_LIST} ${EXE_LIST} ${MACLIB_LIST} ${MACLIB_OLD_LIST} ${MACDLL_LIST} ${LOGS_LIST})

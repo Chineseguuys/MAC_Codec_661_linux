@@ -25,7 +25,7 @@ int main(int argc, char* argv[]) {
 	if (argc != 2) 
 	{
 		printf("~~~Improper Usage~~~\n\n");
-		printf("Usage Example: Sample 1.exe \"c:\\1.ape\"\n\n");
+		printf("Usage Example: ./excute \"./xxx.ape\"");
 		return 0;
 	}
 
@@ -89,7 +89,7 @@ int main(int argc, char* argv[]) {
 
     close(fd_out_pcm);
     close(fd_out_wav);
-    delete[] sFilename;
+    SAFE_ARRAY_DELETE(sFilename);
     return 0;
 }
 

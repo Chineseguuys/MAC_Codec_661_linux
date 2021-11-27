@@ -540,7 +540,7 @@ int CPrepare::Prepare(const unsigned char * pRawData, int64 nBytes, const WAVEFO
                 }
             }
         }
-        else if (pWaveFormatEx->nChannels == 2)
+        else if (pWaveFormatEx->nChannels == 2)   // 双声道 16 bits 采样
         {
             int LPeak = 0;
             int RPeak = 0;
@@ -567,6 +567,10 @@ int CPrepare::Prepare(const unsigned char * pRawData, int64 nBytes, const WAVEFO
             {
                 *pPeakLevel = ape_max(LPeak, RPeak);
             }
+#ifdef LOG_TEST
+            log_info("{LPeak, RPeak, pPeakLevel}={%d, %d, %d}", LPeak, RPeak,
+                     *pPeakLevel);
+#endif /* LOG_TEST */
 
             // check for pseudo-stereo files
             nBlockIndex = 0;

@@ -337,3 +337,8 @@ Error Codes
 #define ERROR_UNDEFINED                                -1
 
 #define LOG(msg...) printf(msg)
+
+#ifdef LOG_TEST
+//Chinsesguuys@ASUA_UBUNTU
+#include "logs.h"
+#endif /* LOG_TEST */
