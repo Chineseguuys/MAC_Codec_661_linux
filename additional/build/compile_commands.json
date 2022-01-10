@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/yjh/work/github_storage/mac_codec_linux/additional/build",
+  "command": "/usr/local/bin/clang   -g   -o CMakeFiles/test.dir/linux_alsa.c.o   -c /home/yjh/work/github_storage/mac_codec_linux/additional/linux_alsa.c",
+  "file": "/home/yjh/work/github_storage/mac_codec_linux/additional/linux_alsa.c"
+}
+]

@@ -1,0 +1,1 @@
+/usr/local/bin/clang -g  -lc++ -lc++abi -fuse-ld=lld CMakeFiles/test.dir/linux_alsa.c.o  -o test  -lpthread -lsimplelogs -lasound 

@@ -2,6 +2,15 @@
     "cmake.configureOnOpen": true,
     "files.associations": {
         "logs.h": "c",
-        "time.h": "c"
+        "time.h": "c",
+        "wav.h": "c",
+        "thread": "c",
+        "__threading_support": "c",
+        "pthread.h": "c",
+        "*.tcc": "cpp",
+        "fstream": "cpp",
+        "locale": "cpp",
+        "numeric": "cpp",
+        "streambuf": "cpp"
     }
 }

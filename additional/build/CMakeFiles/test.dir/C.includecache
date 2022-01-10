@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yjh/work/github_storage/mac_codec_linux/additional/linux_alsa.c
+sys/types.h
+-
+sys/stat.h
+-
+fcntl.h
+-
+unistd.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+alsa/asoundlib.h
+-
+pthread.h
+-
+wav.h
+/home/yjh/work/github_storage/mac_codec_linux/additional/wav.h
+simplelogs.h
+-
+
+/home/yjh/work/github_storage/mac_codec_linux/additional/wav.h
+

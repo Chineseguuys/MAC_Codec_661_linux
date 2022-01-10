@@ -26,7 +26,7 @@ add_subdirectory(Source)
 
 #add_executable(mac  ./Source/Console/Console.cpp)
 #add_executable(${PROJECT_NAME}  compress_demo.cpp)
-add_executable(${PROJECT_NAME}  compress_demo1.cpp)
+add_executable(${PROJECT_NAME}  compress_demo2.cpp)
 target_include_directories(${PROJECT_NAME}
     PUBLIC 
         "${PROJECT_SOURCE_DIR}/Source/Shared/"

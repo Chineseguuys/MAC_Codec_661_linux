@@ -1,0 +1,109 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.3"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "Source",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "Source",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "test",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "library_build",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "MAC::@43690dd2fb94c8e45e84",
+					"jsonFile" : "target-MAC-Debug-dbd44a18ab6d23d6c9ca.json",
+					"name" : "MAC",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "MAC_STATIC::@43690dd2fb94c8e45e84",
+					"jsonFile" : "target-MAC_STATIC-Debug-91bbb0a92e2315b76585.json",
+					"name" : "MAC_STATIC",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test-Debug-b455a5aa0822312b75a5.json",
+					"name" : "test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/yjh/work/github_storage/mac_codec_linux/extension_build",
+		"source" : "/home/yjh/work/github_storage/mac_codec_linux"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

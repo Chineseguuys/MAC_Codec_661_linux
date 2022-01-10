@@ -1,0 +1,3 @@
+/home/yjh/work/github_storage/mac_codec_linux/additional/build/CMakeFiles/rebuild_cache.dir
+/home/yjh/work/github_storage/mac_codec_linux/additional/build/CMakeFiles/edit_cache.dir
+/home/yjh/work/github_storage/mac_codec_linux/additional/build/CMakeFiles/test.dir
