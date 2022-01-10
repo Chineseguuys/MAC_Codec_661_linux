@@ -1,7 +1,0 @@
-/home/yjh/work/github_storage/mac_codec_linux/extension_build/CMakeFiles/rebuild_cache.dir
-/home/yjh/work/github_storage/mac_codec_linux/extension_build/CMakeFiles/edit_cache.dir
-/home/yjh/work/github_storage/mac_codec_linux/extension_build/CMakeFiles/test.dir
-/home/yjh/work/github_storage/mac_codec_linux/extension_build/Source/CMakeFiles/rebuild_cache.dir
-/home/yjh/work/github_storage/mac_codec_linux/extension_build/Source/CMakeFiles/edit_cache.dir
-/home/yjh/work/github_storage/mac_codec_linux/extension_build/Source/CMakeFiles/MAC_STATIC.dir
-/home/yjh/work/github_storage/mac_codec_linux/extension_build/Source/CMakeFiles/MAC.dir
